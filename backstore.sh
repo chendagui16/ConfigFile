@@ -18,6 +18,10 @@ if [ $choice -eq 1 ];then
 	cp -r $HOME/.vim/ftplugin $DIR/.vim
 fi
 if [ $choice -eq 2 ];then
+	if [ ! -a "$HOME/.vim/autoload/plug.vim" ];then
+		curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	fi
 	echo Restore ConfigFile from $DIR ...
 	cp $DIR/.vimrc $HOME
 	cp $DIR/.tmux.conf $HOME

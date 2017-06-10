@@ -18,6 +18,15 @@ if [ $choice -eq 1 ];then
 	cp -r $HOME/.vim/ftplugin $DIR/.vim
 fi
 if [ $choice -eq 2 ];then
+	if [ ! -d "$HOME/.vim" ];then
+		mkdir $HOME/.vim
+	fi
+	if [ ! -d "$HOME/.vim/undo" ];then
+		mkdir $HOME/.vim/undo
+	fi
+	if [ ! -d "$HOME/.vim/tags" ];then
+		mkdir $HOME/.vim/tags
+	fi
 	if [ ! -a "$HOME/.vim/autoload/plug.vim" ];then
 		curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

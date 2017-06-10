@@ -27,7 +27,7 @@ if [ $choice -eq 2 ];then
 	if [ ! -d "$HOME/.vim/tags" ];then
 		mkdir $HOME/.vim/tags
 	fi
-	if [ ! -a "$HOME/.vim/autoload/plug.vim" ];then
+	if [ ! -f "$HOME/.vim/autoload/plug.vim" ];then
 		curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi

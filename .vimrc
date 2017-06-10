@@ -137,7 +137,11 @@ let g:user_emmet_settings = {
 
 "------------------ YouCompleteMe -------------------
 " Linux vim && NeoVim Using YouCompleteMe
-let g:ycm_server_python_interpreter='/usr/bin/python'
+if(has("mac"))
+	let g:ycm_python_binary_path='/usr/local/bin/python'
+else
+	let g:ycm_server_python_interpreter='/usr/bin/python'
+endif
 let g:ycm_auto_trigger = 1
 let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 let g:ycm_collect_identifiers_from_tags_files = 0
@@ -380,7 +384,6 @@ endfunction
 
 " =============================== Shortcut setting =======================
 if(has("mac"))
-	nnoremap <D-2> :NERDTreeToggle<CR>
 	nnoremap <D-3> :exec exists('syntax_on') ? 'syn off': 'syn on'<CR>
 	nnoremap <D-4> mzgg=G`z
 
@@ -388,7 +391,6 @@ if(has("mac"))
 	" Full Fucking Window ^M ending line file!
 	nnoremap <D-6> :%s////g
 else
-	nnoremap <F2> :NERDTreeToggle<CR>
 	nnoremap <F3> :exec exists('syntax_on') ? 'syn off': 'syn on'<CR>
 	nnoremap <F4> mzgg=G`z
 
@@ -396,6 +398,8 @@ else
 	" Full Fucking Window ^M ending line file!
 	nnoremap <F10> :%s////g
 endif
+" NERDTree
+nnoremap <F2> :NERDTreeToggle<CR>
 
 " Window VertSplit switcher
 nnoremap <leader>hh <C-w>h

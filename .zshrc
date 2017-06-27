@@ -92,8 +92,6 @@ alias la='ls -a'
 alias vi='vim'
 alias javac="javac -J-Dfile.encoding=utf8"
 alias grep="grep --color=auto"
-alias docker_run_tf_gpu_notebook="nvidia-docker run -v /home/dagui/TensorOne:/src -it -p 8888:8888 --rm chendagui16/tensorflow-vizdoom:latest-gpu sh -c 'cd /src && /run_jupyter.sh'"
-alias docker_run_tf_gpu="nvidia-docker run -v /home/dagui/TensorOne:/src -it -p 6006:6006 -p 8888:8888 --rm chendagui16/tensorflow-vizdoom:latest-gpu sh -c 'cd /src && /bin/bash'"
 alias -s html=mate
 alias -s rb=mate
 alias -s py=vi

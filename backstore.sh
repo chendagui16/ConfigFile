@@ -11,6 +11,7 @@ if [ $choice -eq 1 ];then
 	cp $HOME/.vimrc $DIR
 	cp $HOME/.tmux.conf $DIR
 	cp $HOME/.zshrc $DIR
+	cp $HOME/.config/flake8 $DIR
 	if [ ! -d $DIR/.vim ];then
 		mkdir $DIR/.vim
 	fi
@@ -35,6 +36,7 @@ if [ $choice -eq 2 ];then
 	cp $DIR/.vimrc $HOME
 	cp $DIR/.tmux.conf $HOME
 	cp $DIR/.zshrc $HOME
+	cp $DIR/flake8 $HOME/.config
 	if [ ! -d "$HOME/.vim" ];then
 		mkdir $HOME/.vim
 	fi

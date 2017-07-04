@@ -72,6 +72,9 @@ filetype plugin indent on
 " Set Ale Cheacker
 let g:ale_sign_error = 'o'
 let g:ale_sign_warning = '*'
+let g:ale_linters = {
+	\'python': ['flake8']
+	\}
 
 " EasyAlign
 nmap ga <Plug>(EasyAlign)
@@ -533,8 +536,8 @@ vnoremap <leader>mf :MultipleCursorsFind
 vnoremap <leader>s :call VisualSelection('ag', '')<CR>
 
 " Multi Expand Region
-map K <Plug>(expand_region_expand)
-map J <Plug>(expand_region_shrink)
+map KK <Plug>(expand_region_expand)
+map JJ <Plug>(expand_region_shrink)
 
 "Emmet
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")

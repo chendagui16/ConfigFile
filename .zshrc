@@ -9,7 +9,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="aussiegeek"
 ZSH_THEME="agnoster"
-DEFAULT_USER=dagui
+DEFAULT_USER=chendagui
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -112,5 +112,6 @@ export PATH="$PATH:/usr/local/texlive/2017/bin/x86_64-linux"
 export MANPATH="/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH"
 export INFOPATH="/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+alias mountmycom="sshfs -o uid=$(id -u) -o gid=$(id -g) dagui@166.111.74.88:/home/dagui/TensorOne $HOME/TensorOne "
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -53,7 +53,7 @@ DEFAULT_USER=chendagui
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx autojump vi-mode tmux colored-man-pages)
+plugins=(git osx autojump tmux colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,6 +86,8 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="vim  ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vimconfig="vim ~/.vimrc"
+alias hexos="hexo s source/_data/next.yml"
+alias hexog="hexo g source/_data/next.yml"
 alias cls='clear'
 alias ll='ls -l'
 alias la='ls -a'

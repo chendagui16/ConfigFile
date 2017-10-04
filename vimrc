@@ -7,12 +7,10 @@ call plug#begin('~/.vim/bundle/')
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'gregsexton/gitv'
 
 " @ Plugin --- [ File Buffer Manager ]
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'w0rp/ale'
 Plug 'yegappan/mru'
 Plug 'danro/rename.vim'
 
@@ -28,15 +26,17 @@ Plug 'kana/vim-operator-user'
 Plug 'haya14busa/vim-operator-flashy'
 Plug 'haya14busa/incsearch.vim'
 
-" @ Plugin --- [ Code Search ]
+" @ Plugin --- [ Code Plug ]
 Plug 'rking/ag.vim'
-
-" @ Plugin --- [ Code Format ]
+Plug 'w0rp/ale'
 Plug 'junegunn/vim-easy-align'
 
-" @ Plugin --- [ VC Plug ]
+" @ Plugin --- [ Git Plug ]
 Plug 'tpope/vim-git'
+Plug 'gregsexton/gitv'
 Plug 'tpope/vim-fugitive'
+
+" @ Plugin --- [ Useful Plug ]
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'

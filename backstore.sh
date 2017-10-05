@@ -26,10 +26,10 @@ if [ $choice -eq 2 ];then
 			https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
 	echo Restore ConfigFile from $DIR ...
-	cp $DIR/vimrc $HOME
-	cp $DIR/tmux.conf $HOME
-	cp $DIR/zshrc $HOME
-	cp $DIR/flake8 $HOME/.config
+	cp $DIR/vimrc $HOME/.vimrc
+	cp $DIR/tmux.conf $HOME/.tmux.conf
+	cp $DIR/zshrc $HOME/.zshrc
+	cp $DIR/flake8 $HOME/.config/flake8
 	cp -r $DIR/.vim/UltiSnips $HOME/.vim
 	cp -r $DIR/.vim/ftplugin $HOME/.vim
 fi

@@ -17,6 +17,7 @@ Plug 'danro/rename.vim'
 " @ Plugin --- [ File Search ]
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'rking/ag.vim'
 
 " @ Plugin --- [ View ]
 Plug 'terryma/vim-multiple-cursors'
@@ -27,24 +28,21 @@ Plug 'haya14busa/vim-operator-flashy'
 Plug 'haya14busa/incsearch.vim'
 
 " @ Plugin --- [ Code Plug ]
-Plug 'rking/ag.vim'
 Plug 'w0rp/ale'
 Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-commentary'
+Plug 'majutsushi/tagbar'
 
 " @ Plugin --- [ Git Plug ]
 Plug 'tpope/vim-git'
-Plug 'gregsexton/gitv'
 Plug 'tpope/vim-fugitive'
+Plug 'gregsexton/gitv'
+Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 
 " @ Plugin --- [ Useful Plug ]
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-commentary'
-
-" Git all famliy
-" For SVN status
-Plug 'airblade/vim-gitgutter'
-Plug 'mhinz/vim-signify'
 
 " @ Plugin --- [ Code Complete Unity ]
 Plug 'mattn/emmet-vim'
@@ -158,7 +156,6 @@ let g:ycm_filetype_blacklist = {
 			\ 'tagbar' : 1,
 			\ 'qf' : 1,
 			\ 'notes' : 1,
-			\ 'markdown' : 1,
 			\ 'unite' : 1,
 			\ 'text' : 1,
 			\ 'vimwiki' : 1,
@@ -187,22 +184,22 @@ catch
 endtry
 
 " =============================== Common setting ==========================
-set mouse=a
-set nocompatible
-set clipboard=unnamed
-set regexpengine=1
-set history=9888
+set mouse=a   " enable the use of the mouse, 'a' = all mode
+set nocompatible  "  set compatible=off, means using vim not vi
+set clipboard=unnamed  " set system clipboard
+set regexpengine=1  " set regexp engine = old engine
+set history=9888  " set max history for command-line
 let mapleader="\<Space>"
 let g:mapleader="\<Space>"
 if exists('$TMUX')
    set term=screen-256color
 endif
 " Format
-set nu
-set noexpandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set nu  " display line number
+set noexpandtab  " don't use spaces to insert a <Tab>
+set tabstop=4  " number of space that a <Tab> in the file counts for
+set shiftwidth=4  " number of space to use for each step of (auto)indent, <, > use this setting
+set softtabstop=4  " number of space that a <Tab> counts for while performing editing operations.
 set autowrite  " auto save file when change buffer
 set display=lastline
 " Encoding setting
@@ -212,46 +209,47 @@ set fileencodings=ucs-bom,utf-8,latin1
 set termencoding=utf-8
 language messages en_US.utf-8
 " For indent
-set wrap
-set autoindent
-set smartindent
-set smarttab
-set cindent
-set linebreak
-set shiftround
+set wrap  " autowrap too long line and display continues on the next line
+set autoindent  " copy indent from current line when starting a new line
+set smartindent  " do smart autoindenting when starting a new line.  such as cindent for C-like programs
+set smarttab  " do smart tabs when inserting tab
+set cindent  " get the amount of indent for line according the indenting rule
+set linebreak  " wrap long lines at a character in appropriate character rather than last character
+set shiftround  " Round indent to multiple of 'shiftwidth'. Useful for >, < command or CTRL-T, CTRL-D in Insert mode
 " Search and Case
-set gdefault
+set gdefault  " default global when use :s///
 set hlsearch  " Highlight search
 set incsearch  " increasing search
-set ignorecase
-set fileignorecase
-set showcmd
-set whichwrap+=<,>,h,l
-" Omni Complete Setting
+set ignorecase  " ignore case in search patterns
+set fileignorecase  " ignore case when using file names and directories
+set showcmd  " show commad in the right-bottom corner of the screen
+set whichwrap+=<,>,h,l  " allow h,l,<left>,<right> move to the previous/next line when cursor is on the first/last charater
+" Command-line completetaion
 set wildmenu
 set wildmode=longest,full
 set completeopt=menu,menuone,longest
 set completeopt+=preview
-set switchbuf=useopen,usetab
-set shortmess=a
+
+set switchbuf=useopen,usetab  " The behaviour when switching between buffers.
+set shortmess=a  " Use short message, such as '[+]' instead of '[Modified]', 'a' means 'all'
 " No back up files
 set nobackup
 set nowritebackup
 set noswapfile
 " Rule the define
-set noshowmode
-set ruler
-set cursorline
-set winaltkeys=no
+set noshowmode  " don't show mode, because it will show in airline
+set ruler  " show the line and column number of the cursor position
+set cursorline  " highlight the screen line of the cursor
+set winaltkeys=no  " don't use ALT keys for menus in GUI version
 " Advance configure
-set magic
-set lazyredraw
-set ttyfast
-set hidden
-set autoread
-set laststatus=2
-set cmdheight=1
-set modelines=1
+set magic  " use magic search pattern
+set lazyredraw  " don't redraw while executing macros, which can speed-up
+set ttyfast  " Improve smoothness of redrawing, which can speed-up
+set hidden  " Buffer becomes hidden when it is abandoned
+set autoread  " auomatically read when the file has been changed outside of Vim
+set laststatus=2  " a status line mode
+set cmdheight=1  " command-line height
+set modelines=1  " mode-line height
 " No surround sound
 set noerrorbells
 set novisualbell
@@ -404,6 +402,9 @@ endif
 " NERDTree
 nnoremap <F2> :NERDTreeToggle<CR>
 
+" Tagbar
+nnoremap <F8> :TagbarToggle<CR>
+
 " Window VertSplit switcher
 nnoremap <leader>hh <C-w>h
 nnoremap <leader>jj <C-w>j
@@ -416,6 +417,7 @@ nnoremap zr zR
 " Fast searcher
 nnoremap z, :FZF --no-mouse .<CR>
 
+" insert empty line
 nnoremap <silent> zj o<ESC>k
 nnoremap <silent> zk O<ESC>j
 
@@ -501,14 +503,7 @@ nnoremap <leader>cd :cd %:p:h<CR>
 nnoremap <leader>cp :let @+=expand("%:p")<CR>:echo "Copied current file
 			\ path '".expand("%:p")."' to clipboard"<CR>
 
-" Tabluer Format
-vnoremap <leader>t :Tabularize/
-vnoremap <leader>t= :Tabularize/=<CR>
-vnoremap <leader>t, :Tabularize/,<CR>
-vnoremap <leader>t: :Tabularize/:<CR>
-vnoremap <leader>t; :Tabularize/;<CR>
-
-" <leader>s: Spell checking shortcuts
+" <leader>ss: Spell checking shortcuts
 " fold enable settings
 nnoremap <leader>ss :setlocal spell!<CR>
 nnoremap <leader>sj ]szz

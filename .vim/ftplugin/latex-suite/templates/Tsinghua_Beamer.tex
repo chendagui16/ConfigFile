@@ -98,21 +98,22 @@
 \end{frame}
 
 \section*{目录}
-\frame{
+\begin{frame}[shrink]
 \frametitle{\secname}
 % \begin{multicols}{2}  % 如果目录太多，可以使用双栏显示
 \tableofcontents[hidesubsections]
 % \tableofcontents[sections={<1-5>}]
 %\end{multicols}
 \note{这里是注释}
-}
+\end{frame}
 
 \AtBeginSubsection[] {
-\frame<handout:0> {
+\begin{frame}[shrink]
 \frametitle{目录}
-\tableofcontents[current,currentsubsection,hideothersubsections]
+\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
+%\tableofcontents[current,currentsubsection,hideothersubsections]
 % \tableofcontents[current,currentsubsection,sections={<1-5>}]
-}
+\end{frame}
 \addtocounter{framenumber}{-1}  %目录页不计算页码
 }
 

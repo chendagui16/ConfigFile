@@ -1,6 +1,6 @@
-set sw=2
+set sw=4
 set iskeyword+=:
-map <F6> <ESC>:w<CR><leader>ll
+map <F6> <ESC>:w<CR><leader>ll<C-o>
 call IMAP('SUM','\sum_{<++>}^{<++>} <++>','tex')
 call IMAP('FRAC','\frac{<++>}{<++>} <++>','tex')
 call IMAP('INT','\int_{<++>}^{<++>} <++>','tex')

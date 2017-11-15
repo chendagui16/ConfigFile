@@ -71,7 +71,8 @@ filetype plugin indent on
 let g:ale_sign_error = 'o'
 let g:ale_sign_warning = '*'
 let g:ale_linters = {
-	\'python': ['flake8']
+	\'python': ['flake8'],
+	\'tex': ['chktex']
 	\}
 
 " EasyAlign
@@ -406,10 +407,10 @@ nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F8> :TagbarToggle<CR>
 
 " Window VertSplit switcher
-nnoremap <leader>hh <C-w>h
-nnoremap <leader>jj <C-w>j
-nnoremap <leader>kk <C-w>k
-nnoremap <leader>ll <C-w>l
+nnoremap <leader><leader>h <C-w>h
+nnoremap <leader><leader>j <C-w>j
+nnoremap <leader><leader>k <C-w>k
+nnoremap <leader><leader>l <C-w>l
 
 " Set as toggle foldcomment
 nnoremap zc @=((foldclosed(line('.')) < 0) ? 'zc' :'zo')<CR>

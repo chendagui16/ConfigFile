@@ -12,15 +12,15 @@ if [ $choice -eq 1 ];then
 	cp $HOME/.tmux.conf $DIR/tmux.conf
 	cp $HOME/.zshrc $DIR/zshrc
 	cp $HOME/.config/flake8 $DIR/flake8
-	[[ ! -d $DIR/.vim ]] && mkdir $DIR/.vim
+	mkdir -p $DIR/.vim
 	cp -r $HOME/.vim/UltiSnips $DIR/.vim
 	cp -r $HOME/.vim/ftplugin $DIR/.vim
 fi
 if [ $choice -eq 2 ];then
-	[[ ! -d "$HOME/.vim" ]] && mkdir $HOME/.vim
-	[[ ! -d "$HOME/.vim/undo" ]] && mkdir $HOME/.vim/undo
-	[[ ! -d "$HOME/.vim/tags" ]] && mkdir $HOME/.vim/tags
-	[[ ! -d "$HOME/.config" ]] && mkdir $HOME/.config
+	mkdir -p $HOME/.vim
+	mkdir -p $HOME/.vim/undo
+	mkdir -p $HOME/.vim/tags
+	mkdir -p $HOME/.config
 	if [ ! -f "$HOME/.vim/autoload/plug.vim" ];then
 		curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 			https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

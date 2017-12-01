@@ -1,9 +1,8 @@
 #!/bin/sh
 
-# [[ ! -d "$HOME/.vim" ]] && mkdir $HOME/.vim
-[[ ! -d "$HOME/.vim" ]] && mkdir $HOME/.vim
-[[ ! -d "$HOME/.vim/undo" ]] && mkdir $HOME/.vim/undo
-[[ ! -d "$HOME/.vim/tags" ]] && mkdir $HOME/.vim/tags
+mkdir -p $HOME/.vim
+mkdir -p $HOME/.vim/undo
+mkdir -p $HOME/.vim/tags
 if [ ! -f "$HOME/.vim/autoload/plug.vim" ];then
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

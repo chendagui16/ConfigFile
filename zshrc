@@ -111,6 +111,7 @@ alias -s md='open'
 export PYENV_ROOT=/usr/local/opt/pyenv
 export PATH="$PATH:$HOME/anaconda2/bin"
 export PATH="$PATH:/usr/local/texlive/2017/bin/x86_64-linux"
+export PATH="$HOME/scripts/bin:$PATH"
 export MANPATH="/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH"
 export INFOPATH="/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi

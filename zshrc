@@ -91,6 +91,7 @@ alias hexog="hexo g source/_data/next.yml"
 alias cls='clear'
 alias ll='ls -l'
 alias la='ls -a'
+alias g++='g++ -std=c++11'
 alias vi='vim'
 alias javac="javac -J-Dfile.encoding=utf8"
 alias grep="grep --color=auto"

@@ -1,0 +1,152 @@
+%        File: slide1.tex
+%     Created: 六  6 02 02:00 下午 2018 C
+% Last Change: 六  6 02 02:00 下午 2018 C
+%
+\documentclass[UTF8, xcolor=table, compress]{beamer}
+%\usepackage{fontspec}
+%\setsansfont{宋体}
+\usepackage[BoldFont,SlantFont]{xeCJK}
+%\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{SimSun}
+
+\usepackage{latexsym,amssymb,amsmath,amsbsy,amsopn,amstext,xcolor,multicol}
+\usepackage{graphicx,wrapfig,fancybox}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{$HOME/.vim/ftplugin/latex-suite/packages/shenlan}
+%\usepackage[backend=bibtex,style=IEEE,sorting=none]{biblatex} % [参考文献格式](https://www.sharelatex.com/blog/2013/07/31/getting-started-with-biblatex.html)
+\usepackage[backend=bibtex,sorting=none]{biblatex} % [参考文献格式](https://www.sharelatex.com/blog/2013/07/31/getting-started-with-biblatex.html) %mac IEEE not found
+\usepackage{array}
+\usepackage{bm}
+\usepackage{caption}
+\usepackage[caption=false,font=scriptsize]{subfig}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usepackage{animate}
+%\usepackage{times} %与上面的冲突，加上这个 粗体斜体就失效
+%\usepackage{mathptmx}
+
+
+\defbibheading{bibliography}[\bibname]{} %avoid printbibliography 自动生成目录
+\addbibresource{ref/papers-bib-in-google.bib}
+\addbibresource{ref/chinese-ref.bib}
+%\setbeamertemplate{bibliography item}{\insertbiblabel} %将列表中默认的丑陋的icon 改成数字,或者下面这个也行
+\setbeamertemplate{bibliography item}[text] % [ref](http://tex.stackexchange.com/questions/68080/beamer-bibliography-icon)
+%\setbeamertemplate{footline}[frame number]{}
+
+%\setframeofframes{of}
+
+\usepackage{boxedminipage} %for: bvh border
+\def\fourgraphicswidth{0.35} %0.3\textwidth
+
+
+\begin{document}
+
+\setbeamerfont{footnote}{size=\tiny}
+\setbeamerfont{caption}{size=\scriptsize}
+\setbeamertemplate{caption}[numbered]
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+\renewcommand*{\bibfont}{\footnotesize}
+
+\title{<+ +>}
+\author[陈达贵]{\hskip 3em\includegraphics[width=0.5\linewidth]{$HOME/Pictures/Photo/shenlan-avatar.png}}
+
+\institute[深蓝学院~机器学习~\& 强化学习理论与实践]{\small \vskip 38pt强化学习理论与实践}
+%\date{2015-06-07}
+%\date{\small \vskip -17pt二〇一五年六月}
+\date{\today}
+
+
+
+\begin{frame}
+\vspace{-15mm}
+\titlepage{}
+\vspace{-50mm}
+\begin{figure}[htbp]
+\begin{center}
+	\includegraphics[width=0.3\linewidth]{$HOME/Pictures/Photo/shenlan-whole.png}
+\end{center}
+\end{figure}
+%\beign{picture}(1,1)
+%\put(6,8){\includegraphics[width=0.15\linewidth]{Tsinghua_University_Logo.eps}}
+%\end{picture}
+\end{frame}
+
+\section*{目录}
+\begin{frame}[shrink]
+\frametitle{\secname}
+% \begin{multicols}{2}  % 如果目录太多，可以使用双栏显示
+\tableofcontents[hidesubsections]
+% \tableofcontents[sections={<1-5>}]
+%\end{multicols}
+\note{这里是注释}
+\end{frame}
+
+\AtBeginSubsection[] {
+\begin{frame}[shrink]
+\frametitle{\includegraphics[height=1em]{$HOME/Pictures/Photo/shenlan-logo.png} \quad 目录}
+\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
+%\tableofcontents[current,currentsubsection,hideothersubsections]
+% \tableofcontents[current,currentsubsection,sections={<1-5>}]
+\end{frame}
+\addtocounter{framenumber}{-1}  %目录页不计算页码
+}
+
+\section{Section I}
+
+\subsection{Subsection I}
+
+\frame{
+%\frametitle{\subsecname~}
+Itemize item, just items:
+\begin{itemize}[<+-| alert@+>]
+\item
+item a
+\item
+item b
+\item
+item c
+\item
+item d
+\end{itemize}
+}
+
+\subsection{Subsection II }
+\frame{
+%\frametitle{\subsecname~Goods}
+The enumarate item:
+\begin{enumerate}[<+-| alert@+>]
+\item
+Item start with number
+\item
+This is item 2
+\end{enumerate}
+}
+
+\section{section II}
+
+\subsection{subsection I}
+
+\frame{
+Description item:
+\begin{description}%[<+-| alert@+>]
+\item[description] Item starts with description.
+\item[Fermion] This is item 2.
+\end{description}
+}
+
+\section{Discussion}
+\subsection{总结}
+\subsection{致谢}
+\frame{
+\begin{columns}
+\column{3cm}
+\column{4cm}
+Thank you!
+\column{3cm}
+\end{columns}
+}
+\end{document}
+
+
+

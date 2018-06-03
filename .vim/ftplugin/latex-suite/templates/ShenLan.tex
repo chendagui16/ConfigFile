@@ -84,6 +84,15 @@
 \note{这里是注释}
 \end{frame}
 
+\AtBeginSection[] {
+\begin{frame}[shrink]
+\frametitle{\includegraphics[height=1em]{$HOME/Pictures/Photo/shenlan-logo.png} \quad 目录}
+\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
+%\tableofcontents[current,currentsubsection,hideothersubsections]
+% \tableofcontents[current,currentsubsection,sections={<1-5>}]
+\end{frame}
+\addtocounter{framenumber}{-1}  %目录页不计算页码
+}
 \AtBeginSubsection[] {
 \begin{frame}[shrink]
 \frametitle{\includegraphics[height=1em]{$HOME/Pictures/Photo/shenlan-logo.png} \quad 目录}

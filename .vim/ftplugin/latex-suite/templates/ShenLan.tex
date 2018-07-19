@@ -25,6 +25,9 @@
 \usepackage{animate}
 %\usepackage{times} %与上面的冲突，加上这个 粗体斜体就失效
 %\usepackage{mathptmx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\floatname{algorithm}{算法}
 
 
 \defbibheading{bibliography}[\bibname]{} %avoid printbibliography 自动生成目录
@@ -47,6 +50,7 @@
 \setbeamertemplate{caption}[numbered]
 \setbeamerfont{subsection in toc}{size=\footnotesize}
 \renewcommand*{\bibfont}{\footnotesize}
+\newcommand{\annot}[1]{\emph{\scriptsize 注: #1}}
 
 \title{<+ +>}
 \author[陈达贵]{\hskip 3em\includegraphics[width=0.5\linewidth]{$HOME/Pictures/Photo/shenlan-avatar.png}}

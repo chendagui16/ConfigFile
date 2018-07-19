@@ -113,9 +113,11 @@ export PYENV_ROOT=/usr/local/opt/pyenv
 export PATH="$HOME/anaconda2/bin:$PATH"
 export PATH="/usr/local/texlive/2017/bin/x86_64-linux:$PATH"
 export PATH="$HOME/scripts/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 export MANPATH="/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH"
 export INFOPATH="/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 alias mountmycom="sshfs -o uid=$(id -u) -o gid=$(id -g) dagui@166.111.74.88:/home/dagui/TensorOne $HOME/TensorOne "
+export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

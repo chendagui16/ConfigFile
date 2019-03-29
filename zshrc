@@ -108,6 +108,7 @@ alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
 alias -s md='open'
 
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 export PYENV_ROOT=/usr/local/opt/pyenv
 export PATH="$HOME/anaconda2/bin:$PATH"

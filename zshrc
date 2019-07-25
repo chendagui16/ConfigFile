@@ -115,6 +115,7 @@ export PATH="$HOME/anaconda2/bin:$PATH"
 export PATH="/usr/local/texlive/2017/bin/x86_64-linux:$PATH"
 export PATH="$HOME/scripts/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/odps_clt_release_64/bin:$PATH"
 export MANPATH="/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH"
 export INFOPATH="/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi

@@ -85,6 +85,7 @@ let g:UltiSnipsExpandTrigger="<S-tab>"
 " ColorFul NERDTree Settings
 let g:NERDTreeRespectWildIgnore=1
 let g:NERDTreeDirArrows=0
+let g:NERDTreeShowBookmarks=1
 
 " GitGutter Setting
 let g:gitgutter_sign_column_always = 0

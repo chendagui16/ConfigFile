@@ -141,7 +141,7 @@ let g:user_emmet_settings = {
 "------------------ YouCompleteMe -------------------
 " Linux vim && NeoVim Using YouCompleteMe
 if(has("mac"))
-	let g:ycm_python_binary_path='/usr/local/bin/python'
+	let g:ycm_python_binary_path='/usr/bin/python'
 else
 	let g:ycm_server_python_interpreter='/usr/bin/python'
 endif
@@ -198,18 +198,20 @@ if exists('$TMUX')
 endif
 " Format
 set nu  " display line number
-set noexpandtab  " don't use spaces to insert a <Tab>
 set tabstop=4  " number of space that a <Tab> in the file counts for
 set shiftwidth=4  " number of space to use for each step of (auto)indent, <, > use this setting
 set softtabstop=4  " number of space that a <Tab> counts for while performing editing operations.
+set noexpandtab  " don't use spaces to insert a <Tab>
+autocmd FileType cpp,proto set tabstop=2
+autocmd FileType cpp,proto set shiftwidth=2
+autocmd FileType cpp,proto set softtabstop=2
+autocmd FileType cpp,proto set expandtab
+autocmd FileType python set tabstop=4
+autocmd FileType python set shiftwidth=4
+autocmd FileType python set softtabstop=4
+autocmd FileType python set noexpandtab
 set autowrite  " auto save file when change buffer
 set display=lastline
-" Encoding setting
-set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=ucs-bom,utf-8,latin1
-set termencoding=utf-8
-language messages en_US.utf-8
 " For indent
 set wrap  " autowrap too long line and display continues on the next line
 set autoindent  " copy indent from current line when starting a new line
@@ -218,6 +220,12 @@ set smarttab  " do smart tabs when inserting tab
 set cindent  " get the amount of indent for line according the indenting rule
 set linebreak  " wrap long lines at a character in appropriate character rather than last character
 set shiftround  " Round indent to multiple of 'shiftwidth'. Useful for >, < command or CTRL-T, CTRL-D in Insert mode
+" Encoding setting
+set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,latin1
+set termencoding=utf-8
+language messages en_US.utf-8
 " Search and Case
 set gdefault  " default global when use :s///
 set hlsearch  " Highlight search

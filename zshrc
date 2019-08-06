@@ -111,7 +111,7 @@ alias -s md='open'
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 export PYENV_ROOT=/usr/local/opt/pyenv
-export PATH="$HOME/anaconda2/bin:$PATH"
+export PATH="/anaconda2/bin:$PATH"
 export PATH="/usr/local/texlive/2017/bin/x86_64-linux:$PATH"
 export PATH="$HOME/scripts/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"

@@ -68,11 +68,17 @@ filetype plugin indent on
 
 " =============================== Plugin Config ==========================
 " Set Ale Cheacker
-let g:ale_sign_error = 'o'
-let g:ale_sign_warning = '*'
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '?'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+nmap sp <Plug>(ale_previous_wrap)
+nmap sn <Plug>(ale_next_wrap)
 let g:ale_linters = {
 	\'python': ['flake8'],
-	\'tex': ['chktex']
+	\'tex': ['chktex'],
+	\'cpp': ['clang', 'gcc', 'cpplint', 'cppcheck']
 	\}
 
 " EasyAlign
@@ -146,9 +152,14 @@ else
 	let g:ycm_server_python_interpreter='/usr/bin/python'
 endif
 let g:ycm_auto_trigger = 1
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-let g:ycm_collect_identifiers_from_tags_files = 0
-let g:ycm_add_preview_to_completeopt = 5
+let g:ycm_global_ycm_extra_conf = "~/.vim/ftplugin/.ycm_extra_conf.py"
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_server_log_level = 'info'
+let g:ycm_min_num_identifier_candidate_chars = 2
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_complete_in_strings=1
 let g:ycm_use_ultisnips_completer = 1
 let g:ycm_cache_omnifunc = 1
 let g:ycm_max_diagnostics_to_display = 0

@@ -120,6 +120,6 @@ export MANPATH="/usr/local/texlive/2017/texmf-dist/doc/man:$MANPATH"
 export INFOPATH="/usr/local/texlive/2017/texmf-dist/doc/info:$INFOPATH"
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 alias mountmycom="sshfs -o uid=$(id -u) -o gid=$(id -g) dagui@166.111.74.88:/home/dagui/TensorOne $HOME/TensorOne "
-export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

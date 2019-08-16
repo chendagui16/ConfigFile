@@ -56,6 +56,8 @@ Plug 'kh3phr3n/python-syntax'
 Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-latex/vim-latex'
+Plug 'chiphogg/vim-prototxt'
+
 
 call plug#end()
 

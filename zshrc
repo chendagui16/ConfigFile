@@ -86,8 +86,7 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="vim  ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vimconfig="vim ~/.vimrc"
-alias hexos="hexo s source/_data/next.yml"
-alias hexog="hexo g source/_data/next.yml"
+alias jupyterlab="LANG=zn jupyter-lab"
 alias cls='clear'
 alias ll='ls -l'
 alias la='ls -a'

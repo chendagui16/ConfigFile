@@ -212,7 +212,7 @@ set nu  " display line number
 set tabstop=4  " number of space that a <Tab> in the file counts for
 set shiftwidth=4  " number of space to use for each step of (auto)indent, <, > use this setting
 set softtabstop=4  " number of space that a <Tab> counts for while performing editing operations.
-set noexpandtab  " don't use spaces to insert a <Tab>
+set expandtab  " don't use spaces to insert a <Tab>
 autocmd FileType cpp,proto set tabstop=2
 autocmd FileType cpp,proto set shiftwidth=2
 autocmd FileType cpp,proto set softtabstop=2

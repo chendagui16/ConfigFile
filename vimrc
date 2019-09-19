@@ -83,6 +83,7 @@ let g:ale_linters = {
 	\'cpp': ['clang', 'gcc', 'cpplint', 'cppcheck']
 	\}
 
+let g:ale_cpp_cpplint_options="--linelength=120"
 " EasyAlign
 nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
